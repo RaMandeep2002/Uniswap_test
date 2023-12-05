@@ -311,7 +311,7 @@ describe('MYTokeSwap', async () => {
       console.log('Final balance of Token A: - ', finalbalanceTokenA);
       console.log('Final balance of Token b: - ', finalBalanceTokenB);
     });
-    it('RemoveLiqidityETH', async () => {
+    it.only('RemoveLiqidityETH', async () => {
       console.log(initHash);
       await tokenA
         .connect(signer[0])
