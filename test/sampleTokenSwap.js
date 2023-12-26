@@ -156,7 +156,7 @@ describe('MYTokeSwap', async () => {
     });
   });
   describe('Function Used in Uniswapv2Router02', async () => {
-    it.only('To Add a Liquidity..', async () => {
+    it('To Add a Liquidity..', async () => {
       let iniBalT1 = await tokenA.balanceOf(signer[0].address);
       let iniBalT2 = await tokenB.balanceOf(signer[0].address);
       await _addLiquidity();
@@ -258,7 +258,7 @@ describe('MYTokeSwap', async () => {
       // Final Balance of Token B   : ${afnlBalT2}
       // `);
     });
-    it('Hit remove Liquidity function', async () => {
+    it.only('Hit remove Liquidity function', async () => {
       await _addLiquidity();
       pair = await uniswapV2Factory.getPair(tokenA.target, tokenB.target);
 
@@ -311,7 +311,7 @@ describe('MYTokeSwap', async () => {
       console.log('Final balance of Token A: - ', finalbalanceTokenA);
       console.log('Final balance of Token b: - ', finalBalanceTokenB);
     });
-    it.only('RemoveLiqidityETH', async () => {
+    it('RemoveLiqidityETH', async () => {
       console.log(initHash);
       await tokenA
         .connect(signer[0])
