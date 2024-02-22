@@ -22,7 +22,7 @@ describe('Library contract testing:- ', async () => {
         reserveOut
       );
 
-      console.log('Amount out is:- ', amountOut);
+      // console.log('Amount out is:- ', amountOut);
     });
   });
 });
