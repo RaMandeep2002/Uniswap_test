@@ -148,15 +148,15 @@ describe('MYTokeSwap', async () => {
   }
 
   describe('Token check the token Namne and Total supply we have to setted in contract..', async () => {
-    it('Check The name of the TokenA and TokenB??', async () => {
+    it.only('Check The name of the TokenA and TokenB??', async () => {
       expect(await tokenA.name()).to.equal('MyTokenA');
-      // console.log(await tokenA.name());
+      console.log(await tokenA.name());
       expect(await tokenB.name()).to.equal('MyTokenB');
-      // console.log(await tokenB.name());
+      console.log(await tokenB.name());
     });
   });
   describe('Function Used in Uniswapv2Router02', async () => {
-    it('To Add a Liquidity..', async () => {
+    it.only('To Add a Liquidity..', async () => {
       let iniBalT1 = await tokenA.balanceOf(signer[0].address);
       let iniBalT2 = await tokenB.balanceOf(signer[0].address);
       await _addLiquidity();
@@ -166,23 +166,23 @@ describe('MYTokeSwap', async () => {
       let fnlBalT1 = await tokenA.balanceOf(signer[0].address);
       let fnlBalT2 = await tokenB.balanceOf(signer[0].address);
 
-      // console.log(
-      //   `Reserve After addLiquidity: ${await uniswapV2PairAt.getReserves()}`
-      // );
-      // console.log(`Contract Address of Uniswap Pair: ${uniswapV2Pair.target}`);
-      // console.log(`Pair Address : ${pair}`);
-      // console.log(
-      //   `Balance Of Liquidity Provider after liquidity : ${await uniswapV2PairAt.balanceOf(
-      //     signer[0].address
-      //   )}`
-      // );
+      console.log(
+        `Reserve After addLiquidity: ${await uniswapV2PairAt.getReserves()}`
+      );
+      console.log(`Contract Address of Uniswap Pair: ${uniswapV2Pair.target}`);
+      console.log(`Pair Address : ${pair}`);
+      console.log(
+        `Balance Of Liquidity Provider after liquidity : ${await uniswapV2PairAt.balanceOf(
+          signer[0].address
+        )}`
+      );
 
-      // console.log(`
-      // Initial Balance of Token A : ${iniBalT1}
-      // Initial Balance of Token B : ${iniBalT2}
-      // Final Balance of Token A   : ${fnlBalT1}
-      // Final Balance of Token B   : ${fnlBalT2}
-      // `);
+      console.log(`
+      Initial Balance of Token A : ${iniBalT1}
+      Initial Balance of Token B : ${iniBalT2}
+      Final Balance of Token A   : ${fnlBalT1}
+      Final Balance of Token B   : ${fnlBalT2}
+      `);
 
       await tokenA
         .connect(signer[0])
@@ -210,23 +210,23 @@ describe('MYTokeSwap', async () => {
       let afnlBalT1 = await tokenA.balanceOf(signer[0].address);
       let afnlBalT2 = await tokenB.balanceOf(signer[0].address);
 
-      // console.log(
-      //   `Reserve After addLiquidity: ${await uniswapV2PairAt.getReserves()}`
-      // );
-      // console.log(`Contract Address of Uniswap Pair: ${uniswapV2Pair.target}`);
-      // console.log(`Pair Address : ${pair}`);
-      // console.log(
-      //   `Balance Of Liquidity Provider after liquidity : ${await uniswapV2PairAt.balanceOf(
-      //     signer[0].address
-      //   )}`
-      // );
+      console.log(
+        `Reserve After addLiquidity: ${await uniswapV2PairAt.getReserves()}`
+      );
+      console.log(`Contract Address of Uniswap Pair: ${uniswapV2Pair.target}`);
+      console.log(`Pair Address : ${pair}`);
+      console.log(
+        `Balance Of Liquidity Provider after liquidity : ${await uniswapV2PairAt.balanceOf(
+          signer[0].address
+        )}`
+      );
 
-      // console.log(`
-      // Initial Balance of Token A : ${ainiBalT1}
-      // Initial Balance of Token B : ${ainiBalT2}
-      // Final Balance of Token A   : ${afnlBalT1}
-      // Final Balance of Token B   : ${afnlBalT2}
-      // `);
+      console.log(`
+      Initial Balance of Token A : ${ainiBalT1}
+      Initial Balance of Token B : ${ainiBalT2}
+      Final Balance of Token A   : ${afnlBalT1}
+      Final Balance of Token B   : ${afnlBalT2}
+      `);
     });
     it('addLiquidityETH Function', async () => {
       await _addLiquidityETH();
@@ -410,12 +410,12 @@ describe('MYTokeSwap', async () => {
       expect(iniBalT1).to.be.greaterThan(fnlBalT1);
       expect(fnlBalT2).to.be.greaterThan(iniBalT2);
       // expect(fnlBalT3).to.equal(0.3);
-    //   console.log(`
-    // Initial Balance of Token A : ${iniBalT1}
-    // Initial Balance of Token B : ${iniBalT2}
-    // Final Balance of Token A   : ${fnlBalT1}
-    // Final Balance of Token B   : ${fnlBalT2}
-    // `);
+      //   console.log(`
+      // Initial Balance of Token A : ${iniBalT1}
+      // Initial Balance of Token B : ${iniBalT2}
+      // Final Balance of Token A   : ${fnlBalT1}
+      // Final Balance of Token B   : ${fnlBalT2}
+      // `);
     });
     it('swapTokensForExactTokens Function', async () => {
       await _addLiquidity();
